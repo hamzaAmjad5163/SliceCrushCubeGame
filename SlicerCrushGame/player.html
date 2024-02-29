@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Player Selection</title>
+<link rel="stylesheet" href="profile.css">
+</head>
+<body>
+<div class="profile-selection">
+    <h1>Choose Your Player</h1>
+    <div class="players">
+        <div class="player" onclick="selectPlayer(1)">
+            <img src="./PlayerImages/cartoon-character-with-handbag-sunglasses.jpg" alt="Player 1">
+            <p>Sparky</p>
+        </div>
+        <div class="player" onclick="selectPlayer(2)">
+            <img src="PlayerImages/cartoon-character-with-yellow-jacket-sunglasses.jpg" alt="Player 2">
+            <p>Pudding</p>
+        </div>
+        <div class="player" onclick="selectPlayer(3)">
+            <img src="/PlayerImages/doll-with-fashion-bag.jpg" alt="Player 3">
+            <p>Dizzy</p>
+        </div>
+        <div class="player" onclick="selectPlayer(4)">
+            <img src="PlayerImages/view-three-dimensional-cartoon-animated-bird.jpg" alt="Player 4">
+            <p>Coco</p>
+        </div>
+        <div class="player" onclick="selectPlayer(5)">
+            <img src="PlayerImages/Screenshot 2024-03-01 012655.png" alt="Player 5">
+            <p>Giggles</p>
+        </div>
+    </div>
+</div>
+
+<script>
+var playerSelected = false; // Flag to track whether a player has been selected
+
+function selectPlayer(playerNumber) {
+    // Set playerSelected flag to true
+    playerSelected = true;
+
+    // Redirect to index.html if player selected
+    window.location.href = `index.html?player=${playerNumber}`;
+}
+
+window.onload = function() {
+    // Show alert if player not selected after 3 seconds and playerSelected is still false
+    setTimeout(function() {
+        if (!playerSelected) {
+            alert("Please select a player first.");
+        }
+    }, 3000);
+};
+</script>
+</body>
+</html>
